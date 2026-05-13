@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Don Inacio - Carta de Presentación</title>
+    <link rel="icon" type="image/png" href="extern-arch/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #c8962a;
+            --gold-light: #e8b84b;
+            --gold-pale: #f5e6c0;
+            --cream: #faf6ee;
+            --dark: #1a1208;
+            --dark-mid: #2c1e0a;
+            --text: #3a2e1a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url('extern-arch/fondo.webp') center/cover no-repeat fixed;
+            filter: brightness(0.3) saturate(1.1);
+            z-index: 0;
+        }
+
+        .card {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(26, 18, 8, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(200, 150, 42, 0.35);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(200, 150, 42, 0.12);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .logo {
+            width: 140px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .restaurant-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .restaurant-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--gold-pale);
+            margin-bottom: 25px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 auto 25px;
+        }
+
+        .chef-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--cream);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+
+        .chef-quote strong {
+            color: var(--gold);
+        }
+
+        .chef-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gold-light);
+            margin-bottom: 30px;
+        }
+
+        .map-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 1px solid var(--gold);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 180px;
+            border: 0;
+            display: block;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--cream);
+            font-size: 0.95rem;
+        }
+
+        .location i {
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        .location a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .location a:hover {
+            text-decoration: underline;
+        }
+
+        .buttons-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--gold-pale);
+            margin-bottom: 20px;
+        }
+
+        .btn-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+        }
+
+        .btn-menu {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .btn-menu:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-productos {
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
+        .btn-productos:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .btn-social {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-social:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-facebook {
+            background: #1877F2;
+            color: var(--white);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: var(--white);
+        }
+
+        .btn-tiktok {
+            background: #000000;
+            color: var(--white);
+            border: 1px solid #333;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .footer-card {
+            font-size: 0.75rem;
+            color: #7a6a50;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="extern-arch/logo.png" alt="Don Inacio" class="logo">
+
+        <h1 class="restaurant-name">Don Inacio</h1>
+        <p class="restaurant-subtitle">Restaurante Portugués</p>
+
+        <div class="divider"></div>
+
+        <p class="chef-quote">
+            "La cocina es un lenguaje mediante el cual se puede expresar <strong>armonía, felicidad, belleza, poesía, complejidad, magia, humor, provocación, cultura</strong>."
+        </p>
+        <p class="chef-name">— Chef Fernando Inacio</p>
+
+        <div class="map-container">
+            <iframe
+                src="https://maps.google.com/maps?q=Restaurante+Don+Inacio+Santa+Ana+El+Salvador&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación Don Inacio">
+            </iframe>
+        </div>
+
+        <div class="location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Santa Ana, El Salvador</span>
+        </div>
+
+        <p class="buttons-title">Descubre más</p>
+
+        <div class="btn-grid">
+            <a href="/Menu/index3_v4.html" class="btn btn-menu">
+                <i class="fas fa-utensils"></i>
+                Ver Menú
+            </a>
+            <a href="/secc-productos/index.html" class="btn btn-productos">
+                <i class="fas fa-store"></i>
+                Nuestros Productos
+            </a>
+        </div>
+
+        <div class="social-grid">
+            <a href="https://www.facebook.com/restaurantedoninacio" target="_blank" class="btn-social btn-facebook" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/restaurante_doninacio/" target="_blank" class="btn-social btn-instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@restaurantedoninacio" target="_blank" class="btn-social btn-tiktok" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://wa.me/50369204235" target="_blank" class="btn-social btn-whatsapp" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <p class="footer-card">Martes – Domingo · 6:00 PM – 10:00 PM<br>+503 6920 4235</p>
+    </div>
+</body>
+</html>
